@@ -1,33 +1,24 @@
-import java.util.Scanner;
- 
+import java.io.*;
+import java.util.*;
 public class Main {
- 
-	public static void main(String[] args) {
- 
-		Scanner in = new Scanner(System.in);
- 
-		int N = in.nextInt();
-		int M = in.nextInt();
-		int cnt = 0;
-		String arr[] = new String[N];
-		
-		for (int i = 0; i < N; i++) {
-			arr[i] = in.next();
-		}
-		
-			for (int j = 0; j < M; j++) {
-				String st = in.next();
-				for (int k = 0; k < arr.length; k++) {
-					if(arr[k].equals(st)) {
-						cnt = cnt + 1;
-						break;
-					}
-				}
- 
-			}
-				in.close();
-				System.out.println(cnt);
-		
-	
-	}
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        
+        int n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
+        
+        Map<String, Integer> map = new HashMap<>();
+        
+        for (int i = 0; i < n; i++) {
+            map.put(br.readLine(), 0);
+        }
+        
+        int count = 0;
+        
+        for (int i = 0; i < m; i++) {
+            if (map.containsKey(br.readLine())) count++;
+        }
+        System.out.print(count);
+    }
 }

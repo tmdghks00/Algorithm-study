@@ -7,7 +7,7 @@ public class Main {
         int n = Integer.parseInt(br.readLine());
         int cnt = 0;
         
-        Set<String> set = new HashSet<>();
+        HashSet<String> set = new HashSet<>();
         //  String의 중복여부를 확인하기 위한 HashSet
         for (int i = 0; i < n; i++) {
             String s = br.readLine();
